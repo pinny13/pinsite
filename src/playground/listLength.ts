@@ -1,4 +1,4 @@
-import {psNode} from '../../common';
+import {psNode} from '../common';
 
 function getListLength(firstNode: psNode): number {
     let i=0;
