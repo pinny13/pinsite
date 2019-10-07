@@ -24,135 +24,65 @@ Output: 1->1->2->3->4->4
  * @return {ListNode}
  */
 
-const ListNode = function (val, nxt) {
-    this.val = val;
-    this.next = nxt;
-}
 
-function printList(l){
-    if (!l) {
-        return "";
-    }
-    
-    return l.val + '->' + printList(l.next);
-}
-////////////////////////////////
-    
-var mergeTwoLists = function(l1, l2) {
-    
-    if (!l1 && !l2){
-        return null;
+
+
+var addTwoNumbers = function(l1, l2) {
+    //Edge cases
+    if (!l1 && !l2) {
+        return new ListNode(0);
     }
     
     if (!l1) {
-        return l2;
+        return l1;
     }
     
     if (!l2) {
         return l1;
     }
-    
-    let result = null;
+
+    let extra = 0;
+    let resultHead = null;
     let resultTail = null;
-    let nodeA = l1;
-    let nodeB = l2;
+    let list1 = l1;
+    let list2 = l2;
     
-    if (nodeA.val <= nodeB.val){
-        result = nodeA;
-        nodeA = nodeA.next;
-    } else {
-        result = nodeB;
-        nodeB = nodeB.next;
+    let tempNum = list1.val + list2.val;
+    if (tempNum >= 10) {
+        tempNum = tempNum % 10;
+        extra = 1;
     }
-    result.next = null;
-    resultTail = result;
-    
-    while (nodeA && nodeB) {
-        if (nodeA.val <= nodeB.val){
-            resultTail.next = nodeA;
-            nodeA = nodeA.next;            
-        } else {// if (nodeB.val < nodeA.val)
-            resultTail.next = nodeB;
-            nodeB = nodeB.next;
+    resultHead = new ListNode(tempNum);
+    resultTail = resultHead;
+    list1 = list1.next;
+    list2 = list2.next;
+
+    while (list1 || list2) {
+        let val1 = 0;
+        let val2 = 0;
+        if (list1) {
+            val1 = list1.val;
         }
+        if (list2) {
+            val2 = list2.val;
+        }
+        tempNum = val1 + val2 + extra;
+        if (tempNum >= 10) {
+            tempNum = tempNum % 10;
+            extra = 1; //Math.floor(tempNum /10);
+        } else {
+            extra = 0;
+        }
+        resultTail.next = new ListNode(tempNum);
         resultTail = resultTail.next;
-        // resultTail.next = null;
+        
+        list1 = list1 ? list1.next : null;
+        list2 = list2 ? list2.next : null;
+    }
+
+    if (extra !== 0) {
+        resultTail.next = new ListNode(1);
     }
     
-    if (!nodeA && !nodeB){
-        return result;
-    }
-    
-    if (!nodeB) {
-        let tempA = nodeA;
-        while (tempA){
-            resultTail.next = tempA;
-            resultTail = resultTail.next;
-            // resultTail.next = null;
-            tempA = tempA.next;
-        }
-    } else { // if (!nodeA){
-        let tempB = nodeB;
-        while (tempB){
-            resultTail.next = tempB;
-            resultTail = resultTail.next;
-            // resultTail.next = null;
-            tempB = tempB.next;
-        }
-    }
-    
-    return result;
-}
-
-////////////////////////////////
-
-function test1() {
-    const l13 =new ListNode(4, null); 
-    const l12 =new ListNode(2, l13); 
-    const l1 = new ListNode(1, l12);
-    
-    const l23 =new ListNode(4, null); 
-    const l22 =new ListNode(3, l23); 
-    const l2 = new ListNode(1, l22);
-    
-    return mergeTwoLists(l1,l2);
-}
-let mslE = document.getElementById("msl1");
-mslE.innerHTML = printList(test1());
-
-function test2() {
-    const l13 =new ListNode(5, null); 
-    const l12 =new ListNode(2, l13); 
-    const l1 = new ListNode(1, l12);
-    
-    const l24 =new ListNode(6, null); 
-    const l23 =new ListNode(4, l24); 
-    const l22 =new ListNode(3, l23); 
-    const l2 = new ListNode(1, l22);
-    
-    return mergeTwoLists(l1,l2);
-}
-mslE = document.getElementById("msl2");
-mslE.innerHTML = printList(test2());
-
-function test3() {
-    const l1 = new ListNode(2, null);
-    
-    const l2 =new ListNode(1, null); 
-    
-    return mergeTwoLists(l1,l2);
-}
-mslE = document.getElementById("msl3");
-mslE.innerHTML = printList(test3());
-
-function test4() {
-    const l12 =new ListNode(3, null); 
-    const l1 = new ListNode(-9, l12);
-    
-    const l22 =new ListNode(7, null); 
-    const l2 = new ListNode(5, l22);
-    
-    return mergeTwoLists(l1,l2);
-}
-mslE = document.getElementById("msl4");
-mslE.innerHTML = printList(test4());
+    return resultHead;
+};
