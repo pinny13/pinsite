@@ -1,0 +1,25 @@
+.star {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+    background-image: url('AmazonUIIcon-sprite.png');
+    background-position: -101px -400px;
+    background-repeat: no-repeat;
+}
+
+.star.selected {
+    background-position: -6px -428px;
+}
+
+.star:hover {
+    background-position: -6px -400px;
+}
+
+.rating-value {
+    font-style: italic
+}
+
+.rating-value span{
+    color: #AAA;
+}
