@@ -1,0 +1,49 @@
+.menu-container {
+  width: 500px;
+  height: 200px;
+  border: 1px solid black;
+  position: relative;
+}
+
+.menu-container li {
+  list-style: none;
+  width: 75px;
+  height: 25px;
+  display: inline-block;
+  text-align: center;
+  line-height: 25px;
+  cursor: pointer;
+  position: relative;
+}
+
+.menu-container > ul.menu > li {
+  border: 1px solid #aaa;
+}
+
+.menu-container > ul.menu > li:hover {
+  border: 1px solid #000;
+}
+
+.menu-container ul.menu ul {
+  position: absolute;
+  left: -10px;
+  top: 28px;
+}
+
+.menu-container ul.menu ul > li {
+  display: none;
+  border: 1px solid #0A5;
+}
+
+.menu-container ul.menu ul > li:hover {
+  display: none;
+  border: 1px solid #05A;
+}
+
+.menu-container > ul.menu > li:hover li {
+  display: inline-block;
+}
+
+ul.menu ul:hover > li {
+  display: inline-block;
+}
