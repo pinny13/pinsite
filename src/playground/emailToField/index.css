@@ -1,0 +1,34 @@
+.to-field-container {
+  position: relative;
+  border: 1px solid #666;
+  padding: 4px;
+}
+
+.to-field-container span.email {
+  border: 1px solid #999;
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.to-field-container span.email span.close {
+  color: #333;
+  font-weight: bold;
+  border-left: 1px solid;
+  padding-left: 2px;
+  margin-left: 2px;
+}
+
+.to-field-container span.email span.close:after {
+  content: "X";
+  cursor: pointer;
+}
+
+.to-field {
+  border: 1px solid #333;
+  width: 400px;
+  height: 36px;
+  line-height: 24px;
+  font-size: 24px;
+  padding: 6px;
+  vertical-align: middle;
+}
