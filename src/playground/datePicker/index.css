@@ -1,0 +1,72 @@
+#currentDate {
+  font-style: italic;
+}
+
+.container {
+  position: relative;
+  width: 210px;
+  height: 210px;
+  vertical-align: middle;
+}
+
+.controls {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: auto auto;
+}
+
+.controls div {
+  flex: 1;
+  border: 1px solid #333;
+}
+
+.controls .yearMonth {
+  flex: 3;
+  text-align: center;
+}
+
+.prevYear,
+.prevMonth,
+.nextYear,
+.nextMonth {
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center
+}
+
+.prevYear:after {
+  content: "<<";
+}
+
+.prevMonth:after {
+  content: "<";
+}
+
+.nextYear:after {
+  content: ">>";
+}
+
+.nextMonth:after {
+  content: ">";
+}
+
+.dayNames {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.dayNames div {
+  flex: 1;
+  border: 1px solid #333;
+  text-align: center
+}
+
+.days {
+  display: flex;
+  flex-flow: row wrap;
+}
+.days div {
+  flex: 1 25px;
+  border: 1px solid #666;
+  height: 30px;
+}
