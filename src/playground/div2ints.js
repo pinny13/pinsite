@@ -68,9 +68,9 @@ var divide = function (dividend, divisor) {
     return result;
 };
 
-// document.querySelector('#d2i_1').innerHTML = divide(10, 3);
-// document.querySelector('#d2i_2').innerHTML = divide(7, -3);
-// document.querySelector('#d2i_3').innerHTML = divide(15, 5);
-// document.querySelector('#d2i_4').innerHTML = divide(0, 1);/\
-// document.querySelector('#d2i_5').innerHTML = divide(2, 2);
+document.querySelector('#d2i_1').innerHTML = divide(10, 3);
+document.querySelector('#d2i_2').innerHTML = divide(7, -3);
+document.querySelector('#d2i_3').innerHTML = divide(15, 5);
+document.querySelector('#d2i_4').innerHTML = divide(0, 1);
+document.querySelector('#d2i_5').innerHTML = divide(2, 2);
 document.querySelector('#d2i_6').innerHTML = divide(-2147483648, -1);
