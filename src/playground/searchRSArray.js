@@ -26,19 +26,55 @@ Output: -1
  * @param {number} target
  * @return {number}
  */
-var search = function (nums, target) {
+var search = function(nums, target) {
+  const mySearch = (nums, target, offset) => {
     if (!nums || !nums.length) {
-        return 0;
+      return -1;
     }
 
     if (nums.length === 1) {
-        if (nums[0] === target) {
-            return 0;
-        }
-        return -1;
+      if (nums[0] === target) {
+        return 0 + offset;
+      }
+      return -1;
     }
+
+    const start = nums[0];
+    const end = nums[nums.length - 1];
+    if (start === target) {
+      return offset;
+    }
+    if (end === target) {
+      return offset + nums.length - 1;
+    }
+    if (start < end && !(start <= target && target <= end)) {
+      return -1;
+    }
+    if (start > end && start > target && end < target) {
+      return -1;
+    }
+
+    const middle = Math.floor(nums.length / 2);
+
+    if (nums[middle] === target) {
+      return middle + offset;
+    }
+
+    const left = nums.slice(0, middle);
+    let right = [];
+    if (middle + 1 < nums.length) {
+      right = nums.slice(middle + 1);
+    }
+
+    return Math.max(
+      mySearch(left, target, offset),
+      mySearch(right, target, offset + middle + 1)
+    );
+  };
+
+  return mySearch(nums, target, 0);
 };
 
-document.querySelector('#sirsa_1').innerHTML = search([4, 5, 6, 7, 0, 1, 2], 0);
-document.querySelector('#sirsa_2').innerHTML = search([4, 5, 6, 7, 0, 1, 2], 3);
-document.querySelector('#sirsa_3').innerHTML = search([4, 5, 6, 7, 0, 1, 2], 4);
+document.querySelector("#sirsa_1").innerHTML = search([4, 5, 6, 7, 0, 1, 2], 0);
+document.querySelector("#sirsa_2").innerHTML = search([4, 5, 6, 7, 0, 1, 2], 3);
+document.querySelector("#sirsa_3").innerHTML = search([4, 5, 6, 7, 0, 1, 2], 4);
