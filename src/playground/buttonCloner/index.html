@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <header>
+    <title>Button cloner</title>
+  </header>
+
+  <body>
+    <button id="myBtn">I've been clicked 0 times</button>
+  </body>
+
+  <script type="text/javascript">
+    const btnClickHandler = event => {
+      const btn = event.target;
+      const count = Number(btn.getAttribute("data-count") || 0) + 1;
+      btn.setAttribute("data-count", count);
+      btn.innerHTML = `I've been clicked ${count} times`;
+
+      const newBtn = document.createElement("button");
+      newBtn.innerHTML = "I've been clicked 0 times";
+      newBtn.setAttribute("data-count", 0);
+      newBtn.addEventListener("click", btnClickHandler);
+      document.querySelector('body').appendChild(newBtn);
+    };
+
+    const btn1 = document.querySelector("#myBtn");
+    btn1.addEventListener("click", btnClickHandler);
+  </script>
+</html>
