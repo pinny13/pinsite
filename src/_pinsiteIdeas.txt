@@ -1,0 +1,15 @@
+- using less
+
+- responsive and fluid design 
+    - to work on mobile, tablets and desktop using media query
+    - mobile first
+    - use media query, not separate CSS files per media attr
+
+- use 
+    - flex for home page
+    - grid (for list of playground projects ?)
+        - perhapse use <figure> for cells in grid?
+    - semantic html (!)
+
+- Typescript
+    - (?) Babel
