@@ -2,14 +2,33 @@
 
 - responsive and fluid design 
     - to work on mobile, tablets and desktop using media query
-    - mobile first
+    - mobile first (and probably different desgin, e.g. darker color theme, etc.)
     - use media query, not separate CSS files per media attr
+    - https://developers.google.com/web/tools/lighthouse/
 
 - use 
     - flex for home page
     - grid (for list of playground projects ?)
         - perhapse use <figure> for cells in grid?
     - semantic html (!)
+    - (?) <details>
+    - position: sticky
+    - Dynamic (JS) splitting separates code where dynamic import() statements are used
+      (vendor into separate bundle, my own code into its own)
+    - preload for CSS
 
 - Typescript
     - (?) Babel
+    - 
+
+- React
+    - Look at <Router> suggestion for dynamic loading
+      https://developers.google.com/web/fundamentals/performance/optimizing-javascript/code-splitting
+    - 
+
+
+Examples of personal websites:
+    - https://www.themuse.com/advice/the-35-best-personal-websites-weve-ever-seen
+    - https://www.mockplus.com/blog/post/personal-website-design-examples
+    - https://brandyourself.com/blog/branding/best-personal-website-examples/
+    - https://blog.hubspot.com/marketing/best-personal-websites
