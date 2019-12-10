@@ -25,26 +25,26 @@ Explanation: The answer is "wke", with the length of 3.
  * @param {string} s
  * @return {number}
  */
-var lengthOfLongestSubstring = function(s) {
-    if (!s){
+var lengthOfLongestSubstring = function (s) {
+    if (!s) {
         return 0;
     }
-    
-    if (s.length === 1){
+
+    if (s.length === 1) {
         return 1;
     }
 
     let result = 0;
-    for(let i=0; i < s.length; i++){
-        for(let j=1; j <= s.length; j++) {
-            let str = s.substring(i,j);
-            
-            if (str.length < result){
+    for (let i = 0; i < s.length; i++) {
+        for (let j = 1; j <= s.length; j++) {
+            let str = s.substring(i, j);
+
+            if (str.length < result) {
                 continue;
             }
-            
+
             let checkSet = new Set(str);
-            if (str.length === checkSet.size && str.length > result){
+            if (str.length === checkSet.size && str.length > result) {
                 result = str.length;
             }
         }
@@ -52,12 +52,12 @@ var lengthOfLongestSubstring = function(s) {
     return result;
 };
 
-var lengthOfLongestSubstring2 = function(s) {
+var lengthOfLongestSubstring2 = function (s) {
     var max = 0,
         j = 0,
         resStr = "";
-    while(j < s.length) {
-        if(resStr.indexOf(s[j]) > -1) {
+    while (j < s.length) {
+        if (resStr.indexOf(s[j]) > -1) {
             resStr = resStr.substring(1, resStr.length);
         }
         else {
@@ -66,17 +66,76 @@ var lengthOfLongestSubstring2 = function(s) {
             max = max > resStr.length ? max : resStr.length;
         }
     }
-    
+
     return max;
 };
 
-const lswr1 = document.getElementById("lswr1");
-lswr1.innerHTML = lengthOfLongestSubstring("abcabcbb");
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLongestSubstring3 = function (s) {
+    if (!s) {
+        return 0;
+    }
 
-const lswr2 = document.getElementById("lswr2");
-lswr2.innerHTML = lengthOfLongestSubstring("au");
+    if (s.length === 1) {
+        return 1;
+    }
 
-const lswr3 = document.getElementById("lswr3");
-lswr3.innerHTML = lengthOfLongestSubstring(
-    "qwertyu"
-);
+    if (s.length === 2) {
+        return s[0] === s[1] ? 1 : 2;
+    }
+
+    let result = 0;
+    let map = new Map();
+
+    // Create index map
+    for (let i = 0; i < s.length; i++) {
+        let char = s[i];
+        let charArray = map.get(char);
+        if (!charArray) {
+            charArray = [];
+        }
+        charArray.push(i);
+        map.set(char, charArray);
+    }
+
+    // Check for no repeats
+    const vals = Array.from(map.values());
+    const noRepeats = vals.every((charArr) => charArr.length === 1);
+    if (noRepeats) {
+        return s.length;
+    }
+
+    let oneTimeCharDiff = 0;
+    vals.forEach((charArr) => {
+        if (charArr.length === 1) {
+            oneTimeCharDiff += 1;
+            return;
+        }
+
+        if (oneTimeCharDiff > 0) {
+            result = Math.max(result, oneTimeCharDiff + 1);
+        }
+        oneTimeCharDiff = 1;
+        for (let j = 1; j < charArr.length; j++) {
+            let diff = charArr[j] - charArr[j - 1];
+            result = Math.max(result, diff);
+        }
+    });
+
+    result = Math.max(result, oneTimeCharDiff);
+
+    return result;
+};
+
+document.querySelector('#lswr_1').innerHTML = lengthOfLongestSubstring3('abcabcbb');
+document.querySelector('#lswr_2').innerHTML = lengthOfLongestSubstring3('bbbbb');
+document.querySelector('#lswr_3').innerHTML = lengthOfLongestSubstring3('pwwkew');
+document.querySelector('#lswr_4').innerHTML = lengthOfLongestSubstring3('au');
+document.querySelector('#lswr_5').innerHTML = lengthOfLongestSubstring3('qwerty');
+document.querySelector('#lswr_6').innerHTML = lengthOfLongestSubstring3('aab');
+document.querySelector('#lswr_7').innerHTML = lengthOfLongestSubstring3('abcdbefg');
+    document.querySelector('#lswr_8').innerHTML = lengthOfLongestSubstring3('abcdb');
+document.querySelector('#lswr_9').innerHTML = lengthOfLongestSubstring3('abb');
