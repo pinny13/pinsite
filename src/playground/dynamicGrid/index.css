@@ -1,0 +1,58 @@
+.container {
+  width: 330px;
+  height: 130px;
+  border: 1px solid #666;
+  padding: 10px;
+}
+
+.row1,
+.row2 {
+  height: 55px;
+  vertical-align: top;
+}
+
+.cell {
+  background-color: cadetblue;
+  border-radius: 5px;
+  border: 0;
+  height: 50px;
+}
+
+.row1 div,
+.row2 div {
+  display: inline-block;
+  /* min-width: 100px; */
+  margin: 0;
+}
+
+.row1 div {
+  width: 100px;
+}
+
+.row1 div:nth-child(2) {
+  margin: 0 10px;
+}
+
+.row2.init div {
+  width: calc(50% - 10px);
+  margin: 0 5px;
+}
+
+.row2.updated div {
+  width: calc(25% - 10px);
+  margin: 0 5px;
+}
+
+.row2 div:first-child {
+  margin-left: 0;
+}
+
+.row2 div:last-child {
+  margin-right: 0;
+}
+
+.row2 .clicker {
+  cursor: pointer;
+  text-align: center;
+  line-height: 20px;
+}

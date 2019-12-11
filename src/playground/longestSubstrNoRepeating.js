@@ -25,117 +25,133 @@ Explanation: The answer is "wke", with the length of 3.
  * @param {string} s
  * @return {number}
  */
-var lengthOfLongestSubstring = function (s) {
-    if (!s) {
-        return 0;
+var lengthOfLongestSubstring = function(s) {
+  if (!s) {
+    return 0;
+  }
+
+  if (s.length === 1) {
+    return 1;
+  }
+
+  let result = 0;
+  for (let i = 0; i < s.length; i++) {
+    for (let j = 1; j <= s.length; j++) {
+      let str = s.substring(i, j);
+
+      if (str.length < result) {
+        continue;
+      }
+
+      let checkSet = new Set(str);
+      if (str.length === checkSet.size && str.length > result) {
+        result = str.length;
+      }
     }
-
-    if (s.length === 1) {
-        return 1;
-    }
-
-    let result = 0;
-    for (let i = 0; i < s.length; i++) {
-        for (let j = 1; j <= s.length; j++) {
-            let str = s.substring(i, j);
-
-            if (str.length < result) {
-                continue;
-            }
-
-            let checkSet = new Set(str);
-            if (str.length === checkSet.size && str.length > result) {
-                result = str.length;
-            }
-        }
-    }
-    return result;
+  }
+  return result;
 };
 
-var lengthOfLongestSubstring2 = function (s) {
-    var max = 0,
-        j = 0,
-        resStr = "";
-    while (j < s.length) {
-        if (resStr.indexOf(s[j]) > -1) {
-            resStr = resStr.substring(1, resStr.length);
-        }
-        else {
-            resStr += s[j];
-            j++;
-            max = max > resStr.length ? max : resStr.length;
-        }
+var lengthOfLongestSubstring2 = function(s) {
+  var max = 0,
+    j = 0,
+    resStr = "";
+  while (j < s.length) {
+    if (resStr.indexOf(s[j]) > -1) {
+      resStr = resStr.substring(1, resStr.length);
+    } else {
+      resStr += s[j];
+      j++;
+      max = max > resStr.length ? max : resStr.length;
     }
+  }
 
-    return max;
+  return max;
 };
 
 /**
  * @param {string} s
  * @return {number}
  */
-var lengthOfLongestSubstring3 = function (s) {
-    if (!s) {
-        return 0;
+var lengthOfLongestSubstring3 = function(s) {
+  if (!s) {
+    return 0;
+  }
+
+  if (s.length === 1) {
+    return 1;
+  }
+
+  if (s.length === 2) {
+    return s[0] === s[1] ? 1 : 2;
+  }
+
+  let result = 0;
+  let map = new Map();
+
+  // Create index map
+  for (let i = 0; i < s.length; i++) {
+    let char = s[i];
+    let charArray = map.get(char);
+    if (!charArray) {
+      charArray = [];
+    }
+    charArray.push(i);
+    map.set(char, charArray);
+  }
+
+  // Check for no repeats
+  const vals = Array.from(map.values());
+  if (vals.length === 1) {
+    return 1;
+  }
+
+  let oneTimeCharDiff = 0;
+  vals.forEach(charArr => {
+    if (charArr.length === 1) {
+      oneTimeCharDiff += 1;
+      return;
     }
 
-    if (s.length === 1) {
-        return 1;
+    if (oneTimeCharDiff > 0) {
+      result = Math.max(result, oneTimeCharDiff + 1);
     }
-
-    if (s.length === 2) {
-        return s[0] === s[1] ? 1 : 2;
+    let first = -1;
+    let second = -1;
+    for (let j = 1; j < charArr.length; j++) {
+      first = charArr[j - 1];
+      second = charArr[j];
+      let diff = second - first;
+      if (first === 0 && second === s.length-1){
+          diff -= 1;
+      }
+      else if (j === 1 && second === s.length - 1) {
+        diff += oneTimeCharDiff;
+      }
+      result = Math.max(result, diff);
     }
+    oneTimeCharDiff = 1;
+  });
 
-    let result = 0;
-    let map = new Map();
+  result = Math.max(result, oneTimeCharDiff);
 
-    // Create index map
-    for (let i = 0; i < s.length; i++) {
-        let char = s[i];
-        let charArray = map.get(char);
-        if (!charArray) {
-            charArray = [];
-        }
-        charArray.push(i);
-        map.set(char, charArray);
-    }
-
-    // Check for no repeats
-    const vals = Array.from(map.values());
-    const noRepeats = vals.every((charArr) => charArr.length === 1);
-    if (noRepeats) {
-        return s.length;
-    }
-
-    let oneTimeCharDiff = 0;
-    vals.forEach((charArr) => {
-        if (charArr.length === 1) {
-            oneTimeCharDiff += 1;
-            return;
-        }
-
-        if (oneTimeCharDiff > 0) {
-            result = Math.max(result, oneTimeCharDiff + 1);
-        }
-        oneTimeCharDiff = 1;
-        for (let j = 1; j < charArr.length; j++) {
-            let diff = charArr[j] - charArr[j - 1];
-            result = Math.max(result, diff);
-        }
-    });
-
-    result = Math.max(result, oneTimeCharDiff);
-
-    return result;
+  return result;
 };
 
-document.querySelector('#lswr_1').innerHTML = lengthOfLongestSubstring3('abcabcbb');
-document.querySelector('#lswr_2').innerHTML = lengthOfLongestSubstring3('bbbbb');
-document.querySelector('#lswr_3').innerHTML = lengthOfLongestSubstring3('pwwkew');
-document.querySelector('#lswr_4').innerHTML = lengthOfLongestSubstring3('au');
-document.querySelector('#lswr_5').innerHTML = lengthOfLongestSubstring3('qwerty');
-document.querySelector('#lswr_6').innerHTML = lengthOfLongestSubstring3('aab');
-document.querySelector('#lswr_7').innerHTML = lengthOfLongestSubstring3('abcdbefg');
-    document.querySelector('#lswr_8').innerHTML = lengthOfLongestSubstring3('abcdb');
-document.querySelector('#lswr_9').innerHTML = lengthOfLongestSubstring3('abb');
+function showIt(id, str) {
+  document.querySelector(`#lswr_${id}`).innerHTML = lengthOfLongestSubstring3(
+    str
+  );
+}
+/*
+showIt(1, "abcabcbb");
+showIt(2, "bbbbb");
+showIt(3, "pwwkew");
+showIt(4, "au");
+showIt(5, "qwerty");
+showIt(6, "aab");
+showIt(7, "abcdbefg");
+showIt(8, "abcdb");
+showIt(9, "abb");
+showIt(10, "abba");*/
+showIt(11, "asljlj");
