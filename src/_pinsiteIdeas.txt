@@ -5,6 +5,9 @@
     - mobile first (and probably different desgin, e.g. darker color theme, etc.)
     - use media query, not separate CSS files per media attr
     - https://developers.google.com/web/tools/lighthouse/
+    - Menu
+        - Always show it (especially on long pages so user can go up easily)
+        - Once scrolled down, shrink it, maybe make it a bit transparent, but on mouse-over no transparency should go away.
 
 - use 
     - flex for home page
@@ -26,6 +29,27 @@
       https://developers.google.com/web/fundamentals/performance/optimizing-javascript/code-splitting
     - 
 
+- Potential website structure:
+    - Home (through navigation link and main logo)
+        - Cool picture (maybe slightly moving). Similar to this: https://www.nathanielkoloc.com/
+        - large font
+        - Lots of free space (?)
+        - Idea for design
+            - Start with my large name on top, lost of space, then lower navigation.
+            - As user scroll down, name disappears and nav sticks to the top with logo appearing.
+            - Nav stays that way on all other pages
+    - Playground
+    - Resources (?)
+    - About
+        - A little description/bio
+        - Sort of a resume
+        - Link to PDF resume
+        - Link to github (?)
+    - Contact
+        - Email
+        - Facebook
+        - LinkedIn
+        - Twitter
 
 Examples of personal websites:
     - https://www.themuse.com/advice/the-35-best-personal-websites-weve-ever-seen
@@ -35,5 +59,16 @@ Examples of personal websites:
 
     List:
     - https://www.niashanks.com/
+    - https://zhenyary.com/
+        - Interesting design
+        - Cool ability to change theming on the fly (! and with smooth transition). Let's implement that!
+        - "Preloading" of each page before content is loaded.
+        - Showing positioning on the page on the left side
+        - "Sliding"/dynamic top navigation
     - https://www.joshuamccartney.com/
     - http://seanhalpin.io/
+    - https://coffee.electerious.com/
+        - tracking mouse movement. Something (similar) to potentially implement later?
+    - https://danielautry.com/
+    - https://jeffreybetts.me/ 
+        - Resources. Might be a good page to have to share sites that interest me
