@@ -52,6 +52,7 @@ var trap = function(height) {
             counter++;
             tempWater += second - height[i - counter];
             j--;
+            pointsOfReference.pop();
           }
 
           currentWater -= tempWater;
@@ -92,6 +93,6 @@ document.querySelector("#trw_1").innerHTML = trap([
   2,
   1
 ]);
-*/
-document.querySelector("#trw_2").innerHTML = trap([0, 7, 1, 4, 6]);
+
+document.querySelector("#trw_2").innerHTML = trap([0, 7, 1, 4, 6]);*/
 document.querySelector("#trw_3").innerHTML = trap([4,2,3]);
