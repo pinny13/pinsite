@@ -19,6 +19,7 @@
     - Dynamic (JS) splitting separates code where dynamic import() statements are used
       (vendor into separate bundle, my own code into its own)
     - preload for CSS
+    - favicon
 
 - Typescript
     - (?) Babel
