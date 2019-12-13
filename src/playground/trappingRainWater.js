@@ -131,3 +131,4 @@ document.querySelector("#trw_1").innerHTML = trap([
 
 document.querySelector("#trw_2").innerHTML = trap([0, 7, 1, 4, 6]);
 document.querySelector("#trw_3").innerHTML = trap([4, 2, 3]);
+document.querySelector("#trw_4").innerHTML = trap([7, 5, 3]);
