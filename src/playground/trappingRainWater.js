@@ -8,7 +8,7 @@ Given n non-negative integers representing an elevation map where the width of e
  * @param {number[]} height
  * @return {number}
  */
-var trap = function(height) {
+var trap_1 = function (height) {
   if (!height || height.length < 2) {
     return 0;
   }
@@ -18,7 +18,7 @@ var trap = function(height) {
   let second = height[2];
   let pointsOfReference = [];
   let currentWater = 0;
-  let i=1;
+  let i = 1;
 
   for (; i < height.length; i++) {
     second = height[i];
@@ -71,14 +71,49 @@ var trap = function(height) {
     first = second;
   }
 
-  if (pointsOfReference.length && second > height[i-2]){
-      result += (second - height[i-2]);
+  if (pointsOfReference.length && second > height[i - 2]) {
+    result += (second - height[i - 2]);
   }
 
   return result;
 };
 
-/*
+var trap = function (height) {
+  if (!height || height.length < 2) {
+    return 0;
+  }
+
+  let ans = 0;
+  let leftMax = 0;
+  let rightMax = 0;
+  let left = 0;
+  let right = height.length - 1;
+  while (left < right) {
+    let leftH = height[left];
+    let rightH = height[right];
+    if (leftH < rightH) {
+      // Deal with left
+      if (leftH >= leftMax) {
+        leftMax = leftH;
+      } else {
+        ans += leftMax - leftH;
+      }
+      left++;
+    } else {
+      // Deal with right
+      if (rightH >= rightMax) {
+        rightMax = rightH;
+      } else {
+        ans += rightMax - rightH;
+      }
+      right--;
+    }
+  }
+
+  return ans;
+}
+
+
 document.querySelector("#trw_1").innerHTML = trap([
   0,
   1,
@@ -94,5 +129,5 @@ document.querySelector("#trw_1").innerHTML = trap([
   1
 ]);
 
-document.querySelector("#trw_2").innerHTML = trap([0, 7, 1, 4, 6]);*/
-document.querySelector("#trw_3").innerHTML = trap([4,2,3]);
+document.querySelector("#trw_2").innerHTML = trap([0, 7, 1, 4, 6]);
+document.querySelector("#trw_3").innerHTML = trap([4, 2, 3]);
