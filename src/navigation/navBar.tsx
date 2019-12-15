@@ -7,19 +7,29 @@ export class NavBar extends React.Component {
       <nav>
         <ul>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/" activeClassName="selected">
+              Home
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/playground">Playground</NavLink>
+            <NavLink to="/playground" activeClassName="selected">
+              Playground
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/resources">Resources</NavLink>
+            <NavLink to="/resources" activeClassName="selected">
+              Resources
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/about">About</NavLink>
+            <NavLink to="/about" activeClassName="selected">
+              About
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink to="/contact" activeClassName="selected">
+              Contact
+            </NavLink>
           </li>
         </ul>
       </nav>
