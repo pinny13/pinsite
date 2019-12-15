@@ -1,2 +1,3 @@
-export * from './listLength';
-export * from './yearWithMostPeople';
+import {PlaygroundPage} from './playgroundPage'
+
+export {PlaygroundPage};

@@ -1,15 +1,6 @@
-- using less
-
-- responsive and fluid design 
-    - to work on mobile, tablets and desktop using media query
-    - mobile first (and probably different desgin, e.g. darker color theme, etc.)
-    - use media query, not separate CSS files per media attr
-    - https://developers.google.com/web/tools/lighthouse/
-    - Menu
-        - Always show it (especially on long pages so user can go up easily)
-        - Once scrolled down, shrink it, maybe make it a bit transparent, but on mouse-over no transparency should go away.
-
 - use 
+    - LESS
+    - Typescript (? Babel)
     - flex for home page
     - grid (for list of playground projects ?)
         - perhapse use <figure> for cells in grid?
@@ -21,14 +12,19 @@
     - preload for CSS
     - favicon
 
-- Typescript
-    - (?) Babel
-    - 
-
 - React
     - Look at <Router> suggestion for dynamic loading
       https://developers.google.com/web/fundamentals/performance/optimizing-javascript/code-splitting
     - 
+
+- responsive and fluid design 
+    - to work on mobile, tablets and desktop using media query
+    - mobile first (and probably different desgin, e.g. darker color theme, etc.)
+    - use media query, not separate CSS files per media attr
+    - https://developers.google.com/web/tools/lighthouse/
+    - Menu
+        - Always show it (especially on long pages so user can go up easily)
+        - Once scrolled down, shrink it, maybe make it a bit transparent, but on mouse-over no transparency should go away.
 
 - Potential website structure:
     - Home (through navigation link and main logo)

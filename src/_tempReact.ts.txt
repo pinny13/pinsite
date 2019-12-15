@@ -1,4 +1,5 @@
-class ScrollingList extends React.Component {
+/*
+export class ScrollingList extends React.Component {
     constructor(props) {
       super(props);
       this.listRef = React.createRef();
@@ -17,7 +18,10 @@ class ScrollingList extends React.Component {
   
     render() {
       return (
-        <div ref={this.listRef}>{/* ...contents... */}</div>
+        <div ref={this.listRef}>{
+          //  ...contents...
+        }</div>
       );
     }
   }
+  */

@@ -1,4 +1,4 @@
-
+/*
 
 Insert a number in order in a cyclic, ordered, single linked list.
 
@@ -22,7 +22,7 @@ insert(Node node, int value): Node
 1 > 2 > 4> (4 links back to 1) insert(4, 3) --> 1 > 2 > 3 > 4 
                                insert(4,1) --> 1 > 1 > 2> 4
 
-
+*/
 //head
 //search for node to start inserting from
 
