@@ -4,10 +4,22 @@
   padding: 4px;
 }
 
+.to-field {
+  border: 1px solid #333;
+  width: 400px;
+  height: 36px;
+  line-height: 24px;
+  font-size: 24px;
+  padding: 6px;
+  vertical-align: middle;
+  margin: 0 3px;
+}
+
 .to-field-container span.email {
   border: 1px solid #999;
   border-radius: 12px;
   padding: 4px;
+  margin: 0 1px;
 }
 
 .to-field-container span.email span.close {
@@ -21,14 +33,4 @@
 .to-field-container span.email span.close:after {
   content: "X";
   cursor: pointer;
-}
-
-.to-field {
-  border: 1px solid #333;
-  width: 400px;
-  height: 36px;
-  line-height: 24px;
-  font-size: 24px;
-  padding: 6px;
-  vertical-align: middle;
 }

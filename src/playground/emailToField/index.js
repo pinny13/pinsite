@@ -5,12 +5,17 @@
   toField.onkeydown = event => {
     if (event.keyCode === 13) {
       const content = toField.value;
+
+      if (!content){
+        return;
+      }
       toField.value = "";
 
       const emailAddress = getEmailAddress(content);
 
       const span = document.createElement("span");
       span.className = "email";
+      span.setAttribute("data-email", emailAddress);
       span.innerHTML = emailAddress;
 
       const closingSpan = document.createElement("span");
@@ -19,8 +24,7 @@
         container.removeChild(span);
       };
       span.appendChild(closingSpan);
-
-      container.prepend(span);
+      container.insertBefore(span, toField);
     }
 
     function getEmailAddress(content) {
