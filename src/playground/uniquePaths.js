@@ -29,64 +29,66 @@ Output: 28
  * @param {number} n
  * @return {number}
  */
-var uniquePaths = function (m, n) {
-    let pathsCount = 0;
+var uniquePaths = function(m, n) {
+  let pathsCount = 0;
 
-    function calcPath(x, y) {
-        if (x === m - 1 && y === n - 1) {
-            pathsCount++;
-            return;
-        }
-
-        if (x < m - 1) {
-            calcPath(x + 1, y);
-        }
-
-        if (y < n - 1) {
-            calcPath(x, y + 1);
-        }
+  function calcPath(x, y) {
+    if (x === m - 1 && y === n - 1) {
+      pathsCount++;
+      return;
     }
-    calcPath(0, 0);
 
-    return pathsCount;
+    if (x < m - 1) {
+      calcPath(x + 1, y);
+    }
+
+    if (y < n - 1) {
+      calcPath(x, y + 1);
+    }
+  }
+  calcPath(0, 0);
+
+  return pathsCount;
 };
 
-var uniquePaths2 = function (m, n) {
-    if (m === n && n < 3) {
-        return n;
+var uniquePaths2 = function(m, n) {
+  if (m === n && n < 3) {
+    return n;
+  }
+
+  let pathsCount = 0;
+  let cache = new Map();
+
+  function calcPath(x, y) {
+    if (x === 0 && y === 0) {
+      pathsCount++;
+      return;
     }
 
-    let pathsCount = 0;
-    let cache = new Map();
-
-    function calcPath(x, y) {
-        if (x === m - 1 && y === n - 1) {
-            pathsCount++;
-            return;
-        }
-
-        const cacheKey = `${x}_${y}`;
-        const cachedValue = cache.get(cacheKey);
-        if (cachedValue) {
-            pathsCount += cachedValue;
-            return;
-        } else {
-            cache.set(cacheKey, pathsCount);
-        }
-
-        if (x < m - 1) {
-            calcPath(x + 1, y);
-        }
-
-        if (y < n - 1) {
-            calcPath(x, y + 1);
-        }
+    const cacheKey = `${x}_${y}`;
+    let cachedValue = cache.get(cacheKey) || 0;
+    if (cachedValue) {
+      cache.set(cacheKey, ++cachedValue);
+      pathsCount++;
+      return;
     }
-    calcPath(0, 0);
 
-    return pathsCount;
+    if (x > 0) {
+      cache.set(cacheKey, ++cachedValue);
+      calcPath(x - 1, y);
+    }
+
+    if (y > 0) {
+      cache.set(cacheKey, ++cachedValue);
+      calcPath(x, y - 1);
+    }
+  }
+  calcPath(m - 1, n - 1);
+
+    return Array.from(cache.values()).sort((a, b) => b - a)[0];
+//   return pathsCount;
 };
 
-document.querySelector('#up_1').innerHTML = uniquePaths2(3, 2);
-document.querySelector('#up_2').innerHTML = uniquePaths2(7, 3);
+document.querySelector("#up_1").innerHTML = uniquePaths2(3, 2);
+document.querySelector("#up_2").innerHTML = uniquePaths2(7, 3);
 // document.querySelector('#up_3').innerHTML = uniquePaths2(51, 9);
