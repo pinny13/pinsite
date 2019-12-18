@@ -7,9 +7,9 @@ eTabs.addEventListener("click", e => {
   eTab.classList.add("active");
   const id = eTab.getAttribute("data-id");
 
-  eContents.querySelectorAll(".content").forEach(node => {
-    node.classList.remove("active");
-  });
+  eContents
+    .querySelectorAll(".content")
+    .forEach(node => node.classList.remove("active"));
 
   let eContent = eContents.querySelector(`.content[data-id="${id}"]`);
   if (!eContent) {
@@ -23,7 +23,7 @@ eTabs.addEventListener("click", e => {
 });
 
 function appendContent(id, elem) {
-    /*
+  /*
 const request = new XMLHttpRequest();
 request.onreadystatechange = ()=>{
     if (request.readystate === XMLHttpRequest.DONE){

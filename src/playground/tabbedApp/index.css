@@ -33,7 +33,6 @@
 .content {
   flex: 1;
   background-color: cornflowerblue;
-  flex: 1;
   display: none;
 }
 
