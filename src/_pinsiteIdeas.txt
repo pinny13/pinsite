@@ -1,6 +1,5 @@
 - use 
     - LESS
-    - Typescript (? Babel)
     - flex for home page
     - grid (for list of playground projects ?)
         - perhapse use <figure> for cells in grid?

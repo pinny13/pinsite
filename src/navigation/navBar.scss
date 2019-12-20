@@ -1,0 +1,16 @@
+@import "./src/common/variables.scss";
+
+#nav-bar {
+  li {
+    display: inline-block;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid red;
+
+    a {
+      &.selected {
+        color: $primaryColor;
+      }
+    }
+  }
+}

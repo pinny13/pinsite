@@ -1,13 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import "./navBar.scss";
 
 export class NavBar extends React.Component {
-  render() {
+  public render() {
     return (
-      <nav>
+      <nav id="nav-bar">
         <ul>
           <li>
-            <NavLink to="/" activeClassName="selected">
+            <NavLink to="/" activeClassName="selected" exact>
               Home
             </NavLink>
           </li>
