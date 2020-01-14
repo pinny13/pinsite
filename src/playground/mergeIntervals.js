@@ -23,7 +23,7 @@ NOTE: input types have been changed on April 15, 2019. Please reset to default c
  * @return {number[][]}
  */
 var merge = function(intervals) {
-    return intervals;
+    return 'MI';
 };
 
 document.querySelector('#mi_1').innerHTML = merge([[1,3],[2,6],[8,10],[15,18]]);
