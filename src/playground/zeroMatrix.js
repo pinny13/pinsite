@@ -44,8 +44,69 @@ Could you devise a constant space solution?
  * @return {void} Do not return anything, modify matrix in-place instead.
  */
 var setZeroes = function(matrix) {
-    return 'SZ1';
+  const rowMapSet = new Set();
+  const colMapSet = new Set();
+
+  // Create maps
+  for (let r = 0; r < matrix.length; r++) {
+    const row = matrix[r];
+    for (let c = 0; c < row.length; c++) {
+      if (row[c] === 0) {
+        rowMapSet.add(r);
+        colMapSet.add(c);
+      }
+    }
+  }
+
+  if (rowMapSet.size === 0 && colMapSet.size === 0) {
+    return;
+  }
+
+  // Update matrix
+  for (let r = 0; r < matrix.length; r++) {
+    const row = matrix[r];
+
+    if (rowMapSet.has(r)) {
+      row.fill(0);
+      continue;
+    }
+
+    for (let c = 0; c < row.length; c++) {
+      if (colMapSet.has(c)) {
+        row[c] = 0;
+      }
+    }
+  }
 };
 
-document.querySelector('#sz_1').innerHTML = setZeroes();
-document.querySelector('#sz_2').innerHTML = setZeroes();
+let m1 = [
+  [1, 1, 1],
+  [1, 0, 1],
+  [1, 1, 1]
+];
+setZeroes(m1);
+document.querySelector("#mz_1").innerHTML = getMatrixHtml(m1);
+
+let m2 = [
+  [0, 1, 2, 0],
+  [3, 4, 5, 2],
+  [1, 3, 1, 5]
+];
+setZeroes(m2);
+document.querySelector("#mz_2").innerHTML = getMatrixHtml(m2);
+
+function getMatrixHtml(m) {
+  let result = '';
+
+  for (let r = 0; r < m.length; r++) {
+    result += '<div>[';
+    const row = m[r];
+    // for (let c = 0; c < row.length; c++) {
+      result += row.join(',');
+    // }
+    result += ']</div>';
+  }
+
+
+  return result;
+}
