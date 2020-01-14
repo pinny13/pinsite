@@ -24,8 +24,43 @@ Could you come up with a one-pass algorithm using only constant space?
  * @return {void} Do not return anything, modify nums in-place instead.
  */
 var sortColors = function(nums) {
-    return 'SC1';
-};
+  // Get counts
+  let c0 = 0;
+  let c1 = 0;
+  let c2 = 0;
 
-document.querySelector('#sc_1').innerHTML = sortColors([2,0,2,1,1,0]);
-document.querySelector('#sc_2').innerHTML = sortColors([2,0,2,1,1,0]);
+  for (let n of nums) {
+    if (n === 0) {
+      c0++;
+    } else if (n === 1) {
+      c1++;
+    } else {
+      c2++;
+    }
+  }
+
+  let i = 0;
+  while (c0) {
+    nums[i] = 0;
+    c0--;
+    i++;
+  }
+
+  while (c1) {
+    nums[i] = 1;
+    c1--;
+    i++;
+  }
+
+  while (c2) {
+    nums[i] = 2;
+    c2--;
+    i++;
+  }
+};
+let n1 = [2, 0, 2, 1, 1, 0];
+sortColors(n1);
+document.querySelector("#sc_1").innerHTML = n1;
+let n2 = [1, 0, 1, 2, 1, 0, 2];
+sortColors(n2);
+document.querySelector("#sc_2").innerHTML = n2;
