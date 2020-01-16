@@ -1,0 +1,20 @@
+.container {
+  position: relative;
+  border: 1px solid #aaa;
+  width: 600px;
+  height: 600px;
+}
+
+.square {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: #f00;
+  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cell:hover {
+  background-color: crimson;
+}
