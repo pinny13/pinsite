@@ -1,11 +1,8 @@
 - use 
-    - LESS
-    - flex for home page
-    - grid (for list of playground projects ?)
-        - perhapse use <figure> for cells in grid?
+    +++- LESS
     - semantic html (!)
     - (?) <details>
-    - position: sticky
+    - (?) position: sticky
     - Dynamic (JS) splitting separates code where dynamic import() statements are used
       (vendor into separate bundle, my own code into its own)
     - preload for CSS
@@ -14,6 +11,7 @@
 - React
     - Look at <Router> suggestion for dynamic loading
       https://developers.google.com/web/fundamentals/performance/optimizing-javascript/code-splitting
+      https://reactjs.org/docs/code-splitting.html#route-based-code-splitting
     - 
 
 - responsive and fluid design 
@@ -30,11 +28,15 @@
         - Cool picture (maybe slightly moving). Similar to this: https://www.nathanielkoloc.com/
         - large font
         - Lots of free space (?)
+        Use flex
         - Idea for design
             - Start with my large name on top, lost of space, then lower navigation.
             - As user scroll down, name disappears and nav sticks to the top with logo appearing.
             - Nav stays that way on all other pages
     - Playground
+        - grid (for list of playground projects ?)
+            - perhapse use <figure> for cells in grid?
+
     - Resources (?)
     - About
         - A little description/bio
@@ -57,13 +59,13 @@ Examples of personal websites:
     - https://www.niashanks.com/
     - https://zhenyary.com/
         - Interesting design
-        - Cool ability to change theming on the fly (! and with smooth transition). Let's implement that!
+        +++ - Cool ability to change theming on the fly (! and with smooth transition). Let's implement that!
         - "Preloading" of each page before content is loaded.
         - Showing positioning on the page on the left side
-        - "Sliding"/dynamic top navigation
+        - "Sliding"/dynamic top navigation (using sticky positioning?)
     - https://www.joshuamccartney.com/
     - http://seanhalpin.io/
-    - https://coffee.electerious.com/
+    - https://coffee.electerious.com/ -> https://electerious.com/
         - tracking mouse movement. Something (similar) to potentially implement later?
     - https://danielautry.com/
     - https://jeffreybetts.me/ 

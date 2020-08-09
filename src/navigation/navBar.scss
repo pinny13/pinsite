@@ -1,13 +1,17 @@
-@import "./src/common/variables.scss";
+@import "../common/variables.scss";
 
 #nav-bar {
   li {
     display: inline-block;
     padding: 5px;
     margin: 5px;
-    border: 1px solid red;
+    border: 1px solid var(--theme-nav-link-text);
+    transition: boder var(--theme-transition-time);
 
     a {
+      color: var(--theme-nav-link-text);
+      transition: color var(--theme-transition-time);
+
       &.selected {
         color: $primaryColor;
       }
