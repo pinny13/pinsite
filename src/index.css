@@ -2,12 +2,11 @@
   --theme-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
     "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-    --theme-transition-time: 2s;
+  --theme-transition-time: 1s;
 
   --theme-bg: #ffffff;
   --theme-font-color: #333333;
   --theme-nav-link-text: navy;
-  
 }
 
 html[data-theme="dark"] {

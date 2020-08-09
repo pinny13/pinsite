@@ -20,7 +20,9 @@ const NavBar = () => {
   return (
     <nav id="nav-bar">
       <ul>
-      <img src={logo} className="App-logo" alt="logo" />
+        <NavLink to="/" exact>
+          <img src={logo} className="App-logo" alt="logo" />
+        </NavLink>
         <li>
           <NavLink to="/" activeClassName="selected" exact>
             Home
@@ -46,10 +48,11 @@ const NavBar = () => {
             Contact
           </NavLink>
         </li>
-
-      [<span id="themeToggler" className="theme-toggle" onClick={toggleTheme}>
-        In dark
-      </span>]
+        [
+        <span id="themeToggler" className="theme-toggle" onClick={toggleTheme}>
+          In dark
+        </span>
+        ]
       </ul>
     </nav>
   );

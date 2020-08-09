@@ -1,6 +1,5 @@
-import {Error404} from './404';
-import {Error} from './error';
+import Error404 from "./404";
+import Error from "./error";
+import Loader from "./loader";
 
-export * from './data_structures'
-export {Error404};
-export {Error};
+export { Error, Error404, Loader };

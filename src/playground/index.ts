@@ -1,3 +1,3 @@
-import {PlaygroundPage} from './playgroundPage'
+import PlaygroundPage from "./playgroundPage";
 
-export {PlaygroundPage};
+export default PlaygroundPage;

@@ -12,6 +12,7 @@
       color: var(--theme-nav-link-text);
       transition: color var(--theme-transition-time);
 
+
       &.selected {
         color: $primaryColor;
       }

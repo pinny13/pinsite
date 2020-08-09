@@ -1,2 +1,4 @@
-export {psNode} from './Node';
-export {Tuple} from './Tuple';
+import { psNode } from "./Node";
+import { Tuple } from "./Tuple";
+
+export { psNode, Tuple };
