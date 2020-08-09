@@ -2,21 +2,12 @@
     - semantic html (!)
     - (?) <details>
     - (?) position: sticky
-    - Dynamic (JS) splitting separates code where dynamic import() statements are used
-      (vendor into separate bundle, my own code into its own)
-    - preload for CSS
-
-- React
-    - Look at <Router> suggestion for dynamic loading
-      https://developers.google.com/web/fundamentals/performance/optimizing-javascript/code-splitting
-      https://reactjs.org/docs/code-splitting.html#route-based-code-splitting
-    - 
+    - https://developers.google.com/web/tools/lighthouse/
 
 - responsive and fluid design 
     - to work on mobile, tablets and desktop using media query
     - mobile first (and probably different desgin, e.g. darker color theme, etc.)
     - use media query, not separate CSS files per media attr
-    - https://developers.google.com/web/tools/lighthouse/
     - Menu
         - Always show it (especially on long pages so user can go up easily)
         - Once scrolled down, shrink it, maybe make it a bit transparent, but on mouse-over no transparency should go away.
