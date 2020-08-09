@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./navBar.scss";
+import logo from "./logo.png";
 
 function toggleTheme() {
   const htmlTag = document.getElementsByTagName("html")[0];
@@ -19,6 +20,7 @@ const NavBar = () => {
   return (
     <nav id="nav-bar">
       <ul>
+      <img src={logo} className="App-logo" alt="logo" />
         <li>
           <NavLink to="/" activeClassName="selected" exact>
             Home

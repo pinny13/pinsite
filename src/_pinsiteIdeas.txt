@@ -1,12 +1,10 @@
 - use 
-    +++- LESS
     - semantic html (!)
     - (?) <details>
     - (?) position: sticky
     - Dynamic (JS) splitting separates code where dynamic import() statements are used
       (vendor into separate bundle, my own code into its own)
     - preload for CSS
-    +++- favicon
 
 - React
     - Look at <Router> suggestion for dynamic loading
@@ -59,7 +57,6 @@ Examples of personal websites:
     - https://www.niashanks.com/
     - https://zhenyary.com/
         - Interesting design
-        +++ - Cool ability to change theming on the fly (! and with smooth transition). Let's implement that!
         - "Preloading" of each page before content is loaded.
         - Showing positioning on the page on the left side
         - "Sliding"/dynamic top navigation (using sticky positioning?)
