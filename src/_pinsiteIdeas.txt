@@ -16,17 +16,32 @@
     - Home (through navigation link and main logo)
         - Cool picture (maybe slightly moving). Similar to this: https://www.nathanielkoloc.com/
         - large font
+          E.g.
+           "Hi, I am Pavel
+           Frotn End engineer and _anything web_ fan
+           from Seattle"
         - Lots of free space (?)
         Use flex
         - Idea for design
             - Start with my large name on top, lost of space, then lower navigation.
             - As user scroll down, name disappears and nav sticks to the top with logo appearing.
             - Nav stays that way on all other pages
+        - Examples:
+          - https://zhenyary.com/about
+          - https://electerious.com/
+          - https://jeffreybetts.me/
+          - http://seanhalpin.io/
+          - https://danielautry.com/
+       
     - Playground
         - grid (for list of playground projects ?)
             - perhapse use <figure> for cells in grid?
+        - Examples:
+            - https://jeffreybetts.me/
 
     - Resources (?)
+        - Examples:
+            - https://jeffreybetts.me/resources/
     - About
         - A little description/bio
         - Sort of a resume
@@ -36,15 +51,24 @@
         - Email
         - Facebook
         - LinkedIn
-        - Twitter
+        - Twitter (?) 
 
 Examples of personal websites:
-    - https://www.themuse.com/advice/the-35-best-personal-websites-weve-ever-seen
-    - https://www.mockplus.com/blog/post/personal-website-design-examples
     - https://brandyourself.com/blog/branding/best-personal-website-examples/
+        - Simon Sinek (screenshot for home page)
+    - https://www.mockplus.com/blog/post/personal-website-design-examples
+        - #1.1 - Gery Shang - Home page
+        - #3.6 - Quintinlodge (screenshot for home page)
+        - #3.12 Daniel
+        - #3.13 Jeffrey Betts (home page, playground, resources)
+        - #4.1 Dave Gamache (home)
+        - #4.3 Nicole Saidy (homepage)
+        - #4.7 Dalius Stuoka (home, menu ux)
+    - https://www.themuse.com/advice/the-35-best-personal-websites-weve-ever-seen
     - https://blog.hubspot.com/marketing/best-personal-websites
-
-    List:
+    - https://www.amycolleenphotography.com/ (menu - faded non-hovered items)
+    - https://www.simplified.life (overall design, ux, scrolling, use of space)
+    - http://www.pascalvangemert.nl/ (sticky menu)
     - https://www.niashanks.com/
     - https://zhenyary.com/
         - Interesting design
@@ -53,6 +77,7 @@ Examples of personal websites:
         - "Sliding"/dynamic top navigation (using sticky positioning?)
     - https://www.joshuamccartney.com/
     - http://seanhalpin.io/
+    - https://www.adamhartwig.co.uk/ (design, space)
     - https://coffee.electerious.com/ -> https://electerious.com/
         - tracking mouse movement. Something (similar) to potentially implement later?
     - https://danielautry.com/

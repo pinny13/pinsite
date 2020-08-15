@@ -1,0 +1,9 @@
+
+@media screen (max-with: 980px){
+// For different screen size - different img source (sameimage different sizes)
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
